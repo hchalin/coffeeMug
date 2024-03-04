@@ -91,7 +91,7 @@ smokeGeometry.scale(1.5, 6, 1.5);
 
 // Perlin texture
 const perlinTexture = textureLoader.load("./perlin.png");
-perlinTexture.wrapS = THREE.RepeatWrapping;
+perlinTexture.wrapS = THREE.RepeatWrapping; // Wrap the texture
 perlinTexture.wrapT = THREE.RepeatWrapping;
 // Material
 const smokeMaterial = new THREE.ShaderMaterial({
@@ -104,6 +104,7 @@ const smokeMaterial = new THREE.ShaderMaterial({
     uPerlinTexture: new THREE.Uniform(perlinTexture),
   },
   transparent: true,
+  depthWrite: false,
 });
 
 //Mesh
